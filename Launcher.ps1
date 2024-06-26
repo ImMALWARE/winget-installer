@@ -1,0 +1,4 @@
+$host.UI.RawUI.WindowTitle = "Starting winget-installer..."
+Add-Type -Name Window -Namespace Console -MemberDefinition '[DllImport("Kernel32.dll")]public static extern IntPtr GetConsoleWindow();[DllImport("user32.dll")]public static extern bool ShowWindow(IntPtr hWnd, Int32 nCmdShow);'
+[void][Console.Window]::ShowWindow([Console.Window]::GetConsoleWindow(), 0)
+Start-Process powershell -ArgumentList "(Invoke-WebRequest -UseBasicParsing https://raw.githubusercontent.com/ImMALWARE/winget-installer/8810a18e4a327702a1d4c423ef37fccb52fd88f3/WingetInstaller.ps1).Content | Invoke-Expression" -Verb RunAs
