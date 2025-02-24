@@ -1,3 +1,4 @@
+$host.UI.RawUI.WindowTitle = "Winget Installer"
 $wc = New-Object net.webclient
 cd $env:temp
 $wc.DownloadFile('https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx', "$env:temp\VCLibs.appx")
